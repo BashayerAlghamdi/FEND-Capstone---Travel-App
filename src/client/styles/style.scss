@@ -1,0 +1,22 @@
+body{
+    background-image: url("../media/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+header{
+    font-family: 'Gill Sans';
+    text-align: center;
+    font-size: 2rem;
+}
+section{
+    text-align: center;
+    font-family: 'Gill Sans';
+}
+.form{
+    display: inline;
+}
+#submit{
+    font-size: 15px;
+    border: 1px solid black;
+    padding: 2px;
+}
