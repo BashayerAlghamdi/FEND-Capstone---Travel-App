@@ -2,13 +2,13 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>Test</title>
+        <title>Travel App</title>
     </head>
 
     <body>
 
         <header>
-            Travel App
+            Travel Application
         </header>
 
         <main>
@@ -17,20 +17,29 @@
                     City/Country: 
                     <input id="city" type="text" name="input" placeholder="City/Country">
                     Leaving:
-                    <input id="startdate" type="date" name="input" placeholder="Start date">
+                    <input id="leaving" type="date" name="input" placeholder="Leaving date">
                     Returning:
-                    <input id="enddate" type="date" name="input" placeholder="End date">
+                    <input id="returning" type="date" name="input" placeholder="Returning date">
                     <input id="submit" type="submit" value="submit">
                     <!---onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)"-->
                 </form>
             <section>
 
-            <section>
-                <strong>Information Results:</strong>
-                <div id="results"></div>
+            <section class="results">
+                <strong>Your trip Information:</strong>
+                <div class= "img"><img id="image"></div>
+                <div>
+                    <p>Country: <span id="country"></span></p>
+                    <p>City: <span id="place"></span></p>
+                    <p>Latitude: <span id="latitude"></span></p>
+                    <p>Longitude: <span id="longitude"></span></p>
+                    <p>Leaving date: <span id="startdate"></span></p>
+                    <p>Returning date: <span id="enddate"></span></p>
+                </div>          
             </section>
         </main>
         <footer>
+            Designed by Bashayer,
         </footer>
         <script>
             // Check that service workers are supported

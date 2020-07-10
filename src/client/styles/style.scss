@@ -7,6 +7,7 @@ header{
     font-family: 'Gill Sans';
     text-align: center;
     font-size: 2rem;
+    padding: 1rem
 }
 section{
     text-align: center;
@@ -16,7 +17,24 @@ section{
     display: inline;
 }
 #submit{
+    display: block;
+    margin: 35px auto;
     font-size: 15px;
     border: 1px solid black;
     padding: 2px;
+  
+}
+.results{
+    font-size: 18px;
+}
+.img{
+    height: 30px;
+    width: 40px;
+}
+footer{
+    color: whitesmoke;
+    text-align: center;
+    font-style: italic;
+    font-size: 10px;
+    padding-top: 10%;
 }
