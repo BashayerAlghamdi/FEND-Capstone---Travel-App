@@ -21,19 +21,19 @@ function handleSubmit(event){
     const leavingdate = document.getElementById("leaving").value;
     const returningdate = document.getElementById("returning").value;
 
-   const geonamesApi=  getdata(GeoNamesUrl+city+'&username='+GeoNamesKey)
-   .then(function(geonamesApi){
+   const geonamesApi= getdata(GeoNamesUrl+city+'&username='+GeoNamesKey)
+   .then(function(geonamesdata){
     const lat = geonamesApi.geonames[0].lat;
     const lng = geonamesApi.geonames[0].lng;
 
-    const weatherApi =  getdata(WeatherbitUrl+ '&lat=' + lat + '&lon=' + lng+ '&start_date='+ leavingdate + '&end_date='+ returningdate +'&key'+ WeatherbitKey)
+    const weatherApi = getdata(WeatherbitUrl+ '&lat=' + lat + '&lon=' + lng+ '&start_date='+ leavingdate + '&end_date='+ returningdate +'&key'+ WeatherbitKey)
    })
-   .then(function(weatherApi){
-     const pixabayApi =  getdata(pixabayUrl + pixabayKey + '&q=' + city + '&image_type=photo')
+   .then(function(weatherdata){
+     const pixabayApi = getdata(pixabayUrl + pixabayKey + '&q=' + city + '&image_type=photo')
    })
-   .then(function(pixabayApi){
+   .then(function(img){
     postdata('/add', {
-      'Image': pixabayApi,
+      'img': pixabayApi,
       country: geonamesApi.geonames[0].countryName,
       place: weatherApi.data[0].city_name,
       latitude: weatherApi.data[0].min_temp,
@@ -41,8 +41,7 @@ function handleSubmit(event){
       startdate: startdate,
       enddate: enddate
     })
-   })
-   (updateUI(img))  
+   }).then(updateUI(img))  
 }
 
 // Get api data
@@ -85,7 +84,7 @@ const updateUI = async (data) => {
       document.getElementById('longitude').innerHTML = allData.longitude;
       document.getElementById('startdate').innerHTML = allData.startdate;
       document.getElementById('enddate').innerHTML = allData.enddate;
-      document.getElementById('image').setAttribute('src', pixabayApi );
+      document.getElementById('image').setAttribute('src', img);
     }catch(error){
       console.log("error", error);
     }
