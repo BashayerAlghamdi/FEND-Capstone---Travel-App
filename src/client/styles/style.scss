@@ -25,11 +25,17 @@ section{
   
 }
 .results{
+    display: inline;
     font-size: 18px;
+    color: white;
 }
 .img{
-    height: 30px;
-    width: 40px;
+    padding: 2px;
+    height: 10%;
+    width: 10%;
+    position: relative;
+    left: 25%;
+    
 }
 footer{
     color: whitesmoke;

@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Travel App</title>
     </head>
 
@@ -21,7 +22,6 @@
                     Returning:
                     <input id="returning" type="date" name="input" placeholder="Returning date">
                     <input id="submit" type="submit" value="submit">
-                    <!---onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)"-->
                 </form>
             <section>
 
@@ -29,12 +29,10 @@
                 <strong>Your trip Information:</strong>
                 <div class= "img"><img id="image"></div>
                 <div>
-                    <p>Country: <span id="country"></span></p>
-                    <p>City: <span id="place"></span></p>
-                    <p>Latitude: <span id="latitude"></span></p>
-                    <p>Longitude: <span id="longitude"></span></p>
-                    <p>Leaving date: <span id="startdate"></span></p>
-                    <p>Returning date: <span id="enddate"></span></p>
+                    <p>Country: <div id="country"></div></p>
+                    <p>Latitude: <div id="latitude"></div></p>
+                    <p>Longitude: <div id="longitude"></div></p>
+                    <p>Weather description: <div id="status"></div></p> 
                 </div>          
             </section>
         </main>

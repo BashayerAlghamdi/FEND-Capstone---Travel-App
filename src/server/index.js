@@ -23,19 +23,16 @@ app.use(bodyParser.json())
 
 app.get('/', function (req, res) {
     res.sendFile('dist/index.html')
-    //res.sendFile(path.resolve('src/client/views/index.html'))
 })
-app.listen(8050, function () {
-    console.log('Running on port 8050!')
+app.listen(8030, function () {
+    console.log('Running on port 8030!')
 })
 // Post Route
 app.post('/add', function (req, res) {
     projectData['country'] = req.body.country;
-    projectData['place'] = req.body.place;
+    projectData['status'] = req.body.status;
     projectData['latitude'] = req.body.latitude;
     projectData['longitude'] = req.body.longitude;
-    projectData['startdate'] = req.body.startdate;
-    projectData['enddate'] = req.body.enddate;
     projectData['image'] = req.body.image;
     console.log("POST received");
     res.send(JSON.stringify(projectData));
